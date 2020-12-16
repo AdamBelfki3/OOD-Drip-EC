@@ -1,0 +1,17 @@
+
+We spent quite a lot of time working on our design in assignment 5 and now,
+more than ever, we truly understand the importance of having good design after
+working with someone else’s implementation and having our implementation be used by someone else.
+From the conversations we’ve had with our customers, it seems like they were able
+to work with our code as it is without us having to make any modifications to it.
+However, one minor change we would make to our design/implementation is that we would
+add an interface for the view model so that our customers would be able to easily mimic
+a view model to use as well.
+This was a really interesting and fun experience and it gave us a taste of what we would
+eventually be doing in the real world - practice working with implementations written by
+someone else and working with strangers. Thankfully, our providers were very helpful and
+responded to our questions almost instantly, so luckily we didn’t have any problems with
+trying to piece together the implementation we were working with. Additionally, we just
+needed a few interfaces from their code because we thought it was necessary for us to
+complete the work, and they also sent us those interfaces almost immediately - this could’ve
+easily turned out to be a disaster so we are glad that we got such helpful and responsive providers.

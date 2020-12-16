@@ -1,0 +1,23 @@
+_ Step 1:
+  > Modify the Animation Reader to take into consideration the tempo line
+
+_ Step2:
+  > Ensure values for the tempo intervals are legit values:
+  in start animation:
+    _ no interval is outside the start and end time of the animation
+    _ no interval has a negative duration
+    _ no intervals overlap
+
+_ Step 3:
+  > Find a way to check for the currentTick, when current Tick matches an interval starting time:
+    _ update speed to 0.5, after the end of the interval, we take it back to its normal speed.
+
+
+
+tempo 1 3
+tempo 23 30         /// slow motion will occur in intervals 1-3 and 23-30
+
+to do:
+- readme
+- tests
+- style and javadoc

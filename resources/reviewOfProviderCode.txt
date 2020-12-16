@@ -1,0 +1,110 @@
+Code critique
+(we combined the “design/code limitations and suggestions on how to address them” section and added
+that in each of the three sections (design, implementation and documentation) because the critique
+felt incomplete without discussing that in their respective sections).
+
+Design critique
+
+View design:
+Our providers decided to make one interface called IAnimationView that is implemented by all three
+types of the views. Since all three of these views have different functionalities and so contain
+different methods. For example, currently, the textual also has methods such as “update speed” or
+“update shapes at tick” which doesn’t seem like methods that would ever apply to a textual view in
+the future and so there are a lot of unsupported exceptions being thrown which can be avoided with
+a bit better design. Additionally, their design violates the interface segregation principle since
+they added additional functionality to an existing interface instead of creating a new interface.
+In other words, possibly they could’ve had individual interfaces for each type of view which would
+contain methods specific to that type and then have all those interfaces extend the IAnimationView
+which contains render since that’s the common method amongst all views. If they were to add more
+methods or add more views in the future, all of the other views would have to keep throwing
+unsupported exceptions if they continue to use their current design but this problem would be
+resolved if they instead separated the different types of views with an interface of their own.
+Nevertheless, there are also good things about their view design that we would like to point out.
+First of all, the fact that they reused their code for interactive view from their visual view is
+really good design since they are ensuring that their code is not being duplicated by using
+inheritance.
+
+Model design:
+The main problem we had with our provider’s code is that their IAnimationMove interface
+contains getter methods that actually return the change/delta of the particular motion as opposed
+to simply storing the start and end values. For example, their “getX()” returns the change of X
+from the beginning of motion till the end. So throughout their animation they are just accumulating
+each of the motion shape features and adding accordingly which could be a problem if the user
+decides to put in these values out of order. Since our implementation does not store motions in
+this manner, we had to request our provider if we would be able to add methods that would return
+the start and end features of the motion since that’s how we designed our model. We would also
+suggest that our provider implement their model using start and end values and having methods that
+avoid gaps as opposed to accumulating these values just to make sure that the user could put in
+motions in random order and it would still work fine.
+However, there are also good things about their model design that we think is important to point
+out. First of all, they created an abstract class for shapes which stores all the similar features
+ of a shape instead of repeating the same features over and over again in each of the shape classes.
+ By extracting this information into an abstract model, they were able to minimize code duplication
+ which is key for good design. Additionally, it also makes it much easier to simply add new shapes
+ if they would like to do so in the future.
+
+Controller design:
+A problem we faced with their controller interface is that its implementation stores the ticks
+and timer of the animation for the interactive view, on the other hand the visual view already
+uses its own timer that could be reused by the interactive view, and so it creates unnecessary
+redundancy. Moreover, because the timer was stored in the controller, instead of the views
+implementation, we were not able to fully reuse our own controller implementation via an adapter,
+and thus we had to make a sort of flexible controller adapter which stores a timer and ticks and
+fully implements all the features method but used our controller to implement the render method.
+A better design would probably be to be more consistent with how they choose to store time - either
+ do it in the view or controller but not both. 
+However, one aspect of their controller design that we thought was really good was that they
+decided to use the features interface which was implemented by the controller. This is really good
+design because it’s now very easy to add new features to each of the views by simply adding the
+method to the features interface and then having the controller implement the method using the view.
+
+
+Implementation critique
+
+While working with their code, we noticed a few implementation errors that could be addressed.
+First of all, currently their “render” method is appending two times (once to the input parameter
+and once to the field parameter) which is causing the textual view to appear two times. Next, we
+also noticed that their render method is currently taking in a “speed” and “Appendable” which kind
+of makes it a bit inflexible just in case if in the future there are more functionalities, they
+would have to go back through all files and change the render method. Also, since this method is
+being used by all of the views, the input parameters are not even being used in some cases like
+for example the appendable is not being used in the interactive. A better implementation of this
+ method would be to have render not take in anything but instead just using the fields of the
+ respective classes to either append to or use the speed.
+Secondly, currently their textual view is not taking in the speed that is being inputted by the
+user and then outputting the textual view accordingly with the correct seconds values. In other
+ words, no matter what speed you input, it will still lead to the same output of seconds since
+ the speed is set to 1. 
+Thirdly, we noticed that the “updateSpeed” method in the interactive view method just simply takes
+in the speed inputted by the user and then updates the text method and nothing else. We had to
+implement this feature. 
+Fourthly, the textual view of the provider calls to toString() on the model to render the animation.
+The toString() in the model formats adequately the String containing all the motion and shape data,
+which should be a feature of view, instead. We believe this design is very bad design, because,
+first their toString() does excessive formatting instead of simply returning readable information
+about the model object to the programmer, secondly, this design does not allow other textual view
+implementations, with different formatting, to exist.
+Lastly, we noticed that there’s actually no implementation for the key event listeners which was a
+required part of the assignment 7. Since they used the features design adding key event listeners
+would be extremely easy to implement but I suppose they just forgot to do so. It’s a very good thing
+that they used the features design since it makes it very easy to add new features without having
+to make too many changes.
+
+
+Documentation critique
+
+Overall, their documentation was not as descriptive and some of the method documentations are
+missing. For example, the IAnimationView interface contains four methods and the documentations
+for all four are the same - “renders this animation view.” A better documentation for example for
+the “addFeatures” method would be that this method takes in the methods that are listed in the
+features interface of the animation and then adds those features to the view. A comment of just
+“renders this animation view” does not say anything informative about the method or how it works.
+ Therefore, if we were provided with a more detailed and descriptive documentation, we would have a
+  better understanding of what exactly the method should be doing. We also noticed this about all
+  the documentations in general - they all seem to merely just restate the name of the method but
+   don't really give more detailed information about how it’s working and how the input parameters
+   are useful.
+Additionally, there are missing documentations like in the IAnimationModel, there’s no
+documentation for the methods “getShapesAtTick” and “getAllShapeAnimation” which created a
+confusion for us because we were unsure exactly what these methods should be doing and if they should
+throw any exceptions.
