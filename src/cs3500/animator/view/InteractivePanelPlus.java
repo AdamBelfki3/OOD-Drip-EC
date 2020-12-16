@@ -48,19 +48,15 @@ public class InteractivePanelPlus extends InteractivePanel implements IInteracti
           this.idx += 1;
         }
 
-        //System.out.println(String.format("Discreting when tick was: %d", this.currentTick));
         this.currentTick = this.discreteTicks[idx];
         this.idx += 1;
-        //System.out.println(String.format("Discreting the tick to: %d", this.currentTick));
       }
       else {
         this.currentTick += 1;
       }
     }
     else {
-      //System.out.println(String.format("No discreting, and the tick was: %d", this.currentTick));
       this.currentTick += 1;
-      //System.out.println(String.format("No discreting, now the tick is: %d", this.currentTick));
     }
   }
 
@@ -94,6 +90,7 @@ public class InteractivePanelPlus extends InteractivePanel implements IInteracti
             g2.setColor(new Color(shape.getRgb().getR(), shape.getRgb().getG(),
                 shape.getRgb().getB()));
             if (this.isOutline) {
+              g2.setStroke(new BasicStroke(3));
               g2.draw(rect);
             }
             else {
@@ -109,6 +106,7 @@ public class InteractivePanelPlus extends InteractivePanel implements IInteracti
             g2.setColor(new Color(shape.getRgb().getR(), shape.getRgb().getG(),
                 shape.getRgb().getB()));
             if (this.isOutline) {
+              g2.setStroke(new BasicStroke(3));
               g2.draw(elli);
             } else {
               g2.fill(elli);
@@ -230,6 +228,9 @@ public class InteractivePanelPlus extends InteractivePanel implements IInteracti
                       + ((double) (shape.getSize().getHeight()) * 1 / 3));
               g2.setColor(new Color(shape.getRgb().getR(), shape.getRgb().getG(),
                   shape.getRgb().getB()));
+
+              g2.setStroke(new BasicStroke(3));
+
               g2.draw(line1);
               g2.draw(line2);
               g2.draw(line3);

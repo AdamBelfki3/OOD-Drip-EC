@@ -1,0 +1,150 @@
+canvas 0 0 500 500
+
+
+shape back rectangle
+motion back 1 0 0 400 500 0 0 255      10 0 0 400 500 0 0 255
+motion back 10 0 0 400 500 0 0 240      15 0 0 400 500 0 0 240
+motion back 15 0 0 400 500 0 0 220      20 0 0 400 500 0 0 220
+motion back 20 0 0 400 500 0 0 200      25 0 0 400 500 0 0 200
+motion back 25 0 0 400 500 0 0 180      30 0 0 400 500 0 0 180
+motion back 30 0 0 400 500 0 0 160      35 0 0 400 500 0 0 160
+motion back 35 0 0 400 500 0 0 120      40 0 0 400 500 0 0 120
+motion back 40 0 0 400 500 0 0 100      45 0 0 400 500 0 0 100
+motion back 45 0 0 400 500 0 0 80      50 0 0 400 500 0 0 80
+motion back 50 0 0 400 500 0 0 60      55 0 0 400 500 0 0 60
+motion back 55 0 0 400 500 0 0 40      60 0 0 400 500 0 0 40
+motion back 60 0 0 400 500 0 0 20      65 0 0 400 500 0 0 20
+motion back 65 0 0 400 500 0 0 0      70 0 0 400 500 0 0 0
+
+motion back 70 0 0 400 500 0 0 0      150 0 0 400 500 0 0 0
+
+shape s ellipse
+#        t x  y   w  h   r   g  b      t  x   y  w  h   r   g  b
+
+motion s 1 0 100 80 60 255 90 0      10 50 80 80 60 255 90 0
+motion s 10 50 80 80 60 255 150 0    20 100 60 80 60 255 150 0
+motion s 20 100 60 80 60 255 200 0   30 150 40 80 60 255 200 0
+motion s 30 150 40 80 60 255 220 0   40 200 60 80 60 255 220 0
+motion s 40 200 60 80 60 255 200 0   50 250 80 80 60 255 200 0
+motion s 50 250 80 80 60 255 150 0   60 300 100 80 60 255 150 0
+motion s 60 300 100 80 60 255 150 0   70 320 120 80 60 255 150 0
+
+# put the stars
+shape P0 plus
+shape P1 plus
+shape P2 plus
+shape P3 plus
+shape P4 plus
+shape P5 plus
+shape P6 plus
+shape P7 plus
+shape P8 plus
+shape P9 plus
+shape P10 plus
+shape P11 plus
+shape P12 plus
+shape P13 plus
+shape P14 plus
+shape P15 plus
+shape P16 plus
+shape P17 plus
+shape P18 plus
+shape P19 plus
+shape P20 plus
+
+# shape P1 plus
+# motion P 10 350 70 120 120 255 175 128 30 350 70 120 120 255 175 128
+
+motion P0 75  20 70 20 20 255 255 255      150 20 70 20 20 255 255 255
+motion P1 76  40 90 20 20 255 255 255      150 40 90 20 20 255 255 255
+motion P2 77  300 120 20 20 255 255 255      150 300 120 20 20 255 255 255
+motion P3 78  350 150 20 20 255 255 255      150 350 150 20 20 255 255 255
+motion P4 79  200 50 20 20 255 255 255      150 200 50 20 20 255 255 255
+motion P5 80  100 40 20 20 255 255 255      150 100 40 20 20 255 255 255
+motion P6 81  150 30 20 20 255 255 255      150 150 30 20 20 255 255 255
+motion P7 82  200 80 20 20 255 255 255      150 200 80 20 20 255 255 255
+motion P8 83  250 100 20 20 255 255 255      150 250 100 20 20 255 255 255
+motion P9 84  400 20 20 20 255 255 255      150 400 20 20 20 255 255 255
+motion P10 85  320 70 20 20 255 255 255      150 320 70 20 20 255 255 255
+motion P11 86  120 100 20 20 255 255 255      150 120 50 20 20 255 255 255
+motion P12 87  150 120 20 20 255 255 255      150 150 120 20 20 255 255 255
+motion P13 88  150 200 20 20 255 255 255      150 150 200 20 20 255 255 255
+motion P14 89  50 175 20 20 255 255 255      150 50 155 20 20 255 255 255
+motion P15 90  20 160 20 20 255 255 255      150 20 160 20 20 255 255 255
+motion P16 90  250 90 20 20 255 255 255      150 300 120 20 20 255 255 255
+motion P17 90  230 120 20 20 255 255 255      150 250 100 20 20 255 255 255
+motion P18 93  200 150 20 20 255 255 255      150 220 150 20 20 255 255 255
+motion P19 94  155 40 20 20 255 255 255      150 179 20 20 20 255 255 255
+motion P20 95  250 20 20 20 255 255 255      150 270 10 20 20 255 255 255
+
+
+# put some houses
+shape H1 rectangle
+motion H1 1 120 340 60 150 139 69 19      150 120 340 60 150 139 69 19
+
+shape H2 rectangle
+motion H2 1 20 420 80 70 160 82 45      150 20 420 80 70 160 82 45
+
+shape H3 rectangle
+motion H3 1 220 390 140 100 160 82 45      150 220 390 140 100 160 82 45
+
+
+
+# house features for house 1
+shape W1 rectangle
+motion W1 1 130 360 15 30 100 0 0      150 130 360 15 30 100 0 0
+
+shape W12 rectangle
+motion W12 1 130 400 15 30 100 0 0      150 130 400 15 30 100 0 0
+
+shape W13 rectangle
+motion W13 1 160 400 15 30 100 0 0      150 160 400 15 30 100 0 0
+
+shape W14 rectangle
+motion W14 1 160 360 15 30 100 0 0      150 160 360 15 30 100 0 0
+
+# house features for house 2
+shape W2 rectangle
+motion W2 1 30 440 20 20 100 0 0      150 30 440 20 20 100 0 0
+
+shape W22 rectangle
+motion W22 1 60 440 20 20 100 0 0      150 60 440 20 20 100 0 0
+
+shape W23 rectangle
+motion W23 1 45 468 20 20 100 0 0      150 45 468 20 20 100 0 0
+
+
+# house features for house 3
+shape W3 rectangle
+motion W3 1 240 400 15 40 100 0 0      150 240 400 15 40 100 0 0
+
+shape W31 rectangle
+motion W31 1 270 400 15 40 100 0 0      150 270 400 15 40 100 0 0
+
+shape W32 rectangle
+motion W32 1 300 400 15 40 100 0 0      150 300 400 15 40 100 0 0
+
+shape W33 rectangle
+motion W33 1 330 400 15 40 100 0 0      150 330 400 15 40 100 0 0
+
+shape W34 rectangle
+motion W34 1 280 450 20 30 100 0 0      150 280 450 20 30 100 0 0
+
+
+# door for h 1
+shape D1 rectangle
+motion D1 1 140 450 15 30 100 0 0      150 140 450 15 30 100 0 0
+
+
+
+# door knob for h1
+shape K1 ellipse
+motion K1 1 147 458 5 5 0 0 0      150 147 458 5 5 0 0 0
+
+# door knob for h2
+shape K2 ellipse
+motion K2 1 55 474 5 5 0 0 0      150 55 474 5 5 0 0 0
+
+# door knob for h3
+shape K3 ellipse
+motion K3 1 290 460 5 5 0 0 0      150 290 460 5 5 0 0 0

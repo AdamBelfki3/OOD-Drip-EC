@@ -1,5 +1,10 @@
 # initializes the canvas, with top-left corner (200,70) and
 # dimensions 360x360
+
+tempo 30 35
+tempo 70 75
+tempo 90 95
+
 canvas 200 70 360 360
 # declares a rectangle shape named R
 shape R rectangle
